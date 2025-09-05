@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="absolute bottom-0 w-full 1border-t 1border-gray-500 p-4 place-items-center bg-white">
+    <div className="bottom-0 w-full p-4 place-items-center bg-white">
         <div className="flex justify-between items-center">
             <div className="flex items-center gap-2">
                 <a href="https://omartobon.com" target="_blank">

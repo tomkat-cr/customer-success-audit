@@ -27,15 +27,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          REACT_APP_USE_DATABASE: ${{ secrets.REACT_APP_USE_DATABASE }}
-          REACT_APP_FIREBASE_API_KEY: ${{ secrets.REACT_APP_FIREBASE_API_KEY }}
-          REACT_APP_FIREBASE_AUTH_DOMAIN: ${{ secrets.REACT_APP_FIREBASE_AUTH_DOMAIN }}
-          REACT_APP_FIREBASE_PROJECT_ID: ${{ secrets.REACT_APP_FIREBASE_PROJECT_ID }}
-          REACT_APP_FIREBASE_STORAGE_BUCKET: ${{ secrets.REACT_APP_FIREBASE_STORAGE_BUCKET }}
-          REACT_APP_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.REACT_APP_FIREBASE_MESSAGING_SENDER_ID }}
-          REACT_APP_FIREBASE_APP_ID: ${{ secrets.REACT_APP_FIREBASE_APP_ID }}
-          REACT_APP_FIREBASE_MEASUREMENT_ID: ${{ secrets.REACT_APP_FIREBASE_MEASUREMENT_ID }}
-          REACT_APP_CANVAS_APP_ID: ${{ secrets.REACT_APP_CANVAS_APP_ID }}
+          VITE_APP_USE_DATABASE: ${{ secrets.VITE_APP_USE_DATABASE }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

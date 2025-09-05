@@ -1,9 +1,9 @@
-import logo from "../assets/logo-oto-visual-flow.png";
+import logo from "../assets/logo-oto-visual-flow-horizontal.png";
 
 const Header = () => {
   return (
-    <div className="flex justify-between items-center">
-      <div className="flex items-center gap-2">
+    <div className="flex justify-between items-center mt-1 mb-1 p-1">
+      <div className="flex items-center gap-4">
         <a href="https://omartobon.com" target="_blank">
           <img
             src={logo}
@@ -15,7 +15,7 @@ const Header = () => {
             <h1
                 className="text-2xl font-bold"
             >
-                Customer Success Audit Gratuito
+                Su mejor aliado para optimizar su Customer Success
             </h1>
         </a>
       </div>
