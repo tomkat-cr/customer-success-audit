@@ -1,13 +1,56 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Vite + React + TS</title>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/customer-success-audit/logo-escudo-oto.png" />
+    <title>Customer Success Audit by Omar Tobón / OTO Visual Flow</title>
+    <meta name="description" content="Customer Success Audit by Omar Tobon / OTO Visual Flow" />
+    <meta name="keywords" content="Customer Success, Customer Success Audit, Customer Success Medellin, Omar Tobon, Omar Tobon Medellin, OTO Visual Flow, Customer Success Auditoria Medellin, Customer Success Auditoria Colombia" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/style.css" rel="stylesheet">
-    <script type="module" crossorigin src="/customer-success-audit/assets/main-swtiGe0n.js"></script>
-    <link rel="stylesheet" crossorigin href="/customer-success-audit/assets/main-B1ZSF1dr.css">
+    <link rel="icon" type="image/png" href="/customer-success-audit/images/logo-escudo-oto.png" />
+
+    <!-- Styling -->
+    <link href="/customer-success-audit/css/style.css" rel="stylesheet">
+
+    <!-- Begin Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <script async id="google-tag"></script>
+    <script>
+        const debug = 0;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){
+          dataLayer.push(arguments);
+          if (debug) console.log('Main gtag() event tracked:', arguments);
+        }
+        function loadGoogleTag(tagId) {
+          window.dataLayer = window.dataLayer || [];
+          gtag('js', new Date());
+          gtag('config', tagId);
+          if (debug) console.log('loadGoogleTag() event tracked:', arguments);
+        }
+    </script>
+    <script>
+        const apiBaseUrl = "https://omartobon.com";
+        fetch(`${apiBaseUrl}/php/config.php`)
+            .then(response => response.json())
+            .then(data => {
+                const tagId = data.googleTagId;
+                const script = document.getElementById('google-tag');
+                script.src = `https://www.googletagmanager.com/gtag/js?id=${tagId}`;
+                // Wait until the script is loaded
+                script.onload = () => {
+                    loadGoogleTag(tagId);
+                };
+            })
+            .catch(error => {
+                console.error('Error fetching Google Tag config:', error);
+                const errorContainer = document.getElementById('error-container');
+                if (errorContainer) errorContainer.innerHTML = '<p class="g-recaptcha-error">Google Tag could not be loaded.</p>';
+            });
+    </script>
+    <!-- End Google Analytics -->
+    <script type="module" crossorigin src="/customer-success-audit/assets/main-B2W4IQnK.js"></script>
+    <link rel="stylesheet" crossorigin href="/customer-success-audit/assets/main-p2bkQlDg.css">
   </head>
   <body>
     <div id="root"></div>

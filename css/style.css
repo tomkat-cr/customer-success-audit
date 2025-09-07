@@ -1,0 +1,10 @@
+/* --- Google Recaptcha --- */
+
+.g-recaptcha {
+    display: none;
+}
+
+.g-recaptcha-error {
+    background-color: #f44336;
+    color: white;
+}
