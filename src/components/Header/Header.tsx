@@ -7,7 +7,7 @@ const Header = () => {
         <a href="https://omartobon.com" target="_blank">
           <img
             src={logo}
-            alt="Logo OTO Visual Flow by Omar Tobon"
+            alt="Logo OTO Visual Flow by Omar Tobón"
             className="w-30"
             />
         </a>

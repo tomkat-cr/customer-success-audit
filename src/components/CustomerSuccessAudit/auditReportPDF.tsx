@@ -23,7 +23,7 @@ export const auditReportPDF = (
 
     // 1. Header
     doc.setFontSize(12);
-    doc.text('OTO Visual Flow by Omar Tobon', 105, finalY, { align: 'center' });
+    doc.text('OTO Visual Flow by Omar Tobón', 105, finalY, { align: 'center' });
 
     finalY += getLineHeight(doc) + 5;
     doc.setFontSize(22);
