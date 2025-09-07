@@ -15,7 +15,20 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 ### Removed
 
 
-## [1.0.0] - 2025-09-05
+## [1.0.0] - 2025-09-07
+
+### Added
+- Added PDF report generation.
+- Added support for sending the PDF report as an attachment.
+- Added Calendly integration.
+- Added Google Analytics tracking.
+- Added backend email sending functionality.
+- Added versioning.
+
+### Changed
+- Separation of files from CustomerSuccessAudit component.
+
+## [0.0.0] - 2025-09-05
 
 ### Added
 - Initial development and release.

@@ -71,6 +71,11 @@ A comprehensive self-assessment tool for evaluating and improving your Customer 
    npm install
    ```
 
+3. Copy the .env.example file to .env and fill in the values:
+   ```bash
+   cp .env.example .env
+   ```
+
 ## Usage
 
 ### Development Mode

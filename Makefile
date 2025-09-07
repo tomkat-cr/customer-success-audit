@@ -6,15 +6,17 @@ SHELL := /bin/bash
 help:
 	cat Makefile
 
+pre-deploy:
+	if [ -f .env ]; then set -o allexport; source .env; set +o allexport; fi; sh ./scripts/set_api_base_in_index.sh "$${VITE_APP_API_BASE_URL:-}" "$${VITE_APP_DEBUG:-}"
+
 install:
 	npm install
 
-run:
+run: pre-deploy
 	npm run dev
 
-build:
+build: pre-deploy
 	npm run build
 
-deploy:
+deploy: pre-deploy
 	npm run deploy
-	
