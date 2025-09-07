@@ -96,7 +96,16 @@ To create a production build:
 make build
 ```
 
-The production-ready files will be available in the `dist` directory.
+### Deploying to GitHub Pages
+
+To configure GitHub Pages deployment, update the `deploy.yml` file with your repository information.
+
+The following Repository Variables are used for deployment __before__ doing the Pull Request:
+
+- `VITE_APP_API_BASE_URL`: API base URL
+- `VITE_APP_CALENDLY_USERNAME`: Calendly username
+- `VITE_APP_DEBUG`: Debug mode
+- `VITE_APP_VERSION`: Application version
 
 ### Other Commands
 
