@@ -25,15 +25,18 @@ jobs:
         run: npm install
 
       - name: Pre-Build
-        run: sh ./scripts/set_api_base_in_index.sh ${{ secrets.VITE_APP_API_BASE_URL || '' }} ${{ secrets.VITE_APP_DEBUG || '' }}
+        env:
+          VITE_APP_API_BASE_URL: ${{ vars.VITE_APP_API_BASE_URL || '' }}
+          VITE_APP_DEBUG: ${{ vars.VITE_APP_DEBUG || '' }}
+        run: sh ./scripts/set_api_base_in_index.sh ${{ env.VITE_APP_API_BASE_URL || '' }} ${{ env.VITE_APP_DEBUG || '' }}
 
       - name: Build
         run: npm run build
         env:
-          VITE_APP_CALENDLY_USERNAME: ${{ secrets.VITE_APP_CALENDLY_USERNAME || '' }}
-          VITE_APP_API_BASE_URL: ${{ secrets.VITE_APP_API_BASE_URL || '' }}
-          VITE_APP_VERSION: ${{ secrets.VITE_APP_VERSION || '' }}
-          VITE_APP_DEBUG: ${{ secrets.VITE_APP_DEBUG || '' }}
+          VITE_APP_CALENDLY_USERNAME: ${{ vars.VITE_APP_CALENDLY_USERNAME || '' }}
+          VITE_APP_API_BASE_URL: ${{ vars.VITE_APP_API_BASE_URL || '' }}
+          VITE_APP_VERSION: ${{ vars.VITE_APP_VERSION || '' }}
+          VITE_APP_DEBUG: ${{ vars.VITE_APP_DEBUG || '' }}
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
