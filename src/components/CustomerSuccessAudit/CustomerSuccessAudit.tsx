@@ -493,12 +493,12 @@ const CustomerSuccessAudit = () => {
               </div>
 
               <div className="mt-8 p-6 bg-white rounded-2xl border border-green-200">
-                <h4 className="font-bold text-gray-800 mb-3">🎁 BONUS por completar el audit:</h4>
+                <h4 className="font-bold text-gray-800 mb-3">🎁 BONUS por completar la auditoría:</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
                   <div>✅ Checklist de 25 puntos para CS</div>
                   <div>✅ Template de Customer Health Score</div>
                   <div>✅ Calculadora de ROI en CS</div>
-                  <div>✅ Acceso a Masterclass exclusiva</div>
+                  {/* <div>✅ Acceso a Masterclass exclusiva</div> */}
                 </div>
               </div>
             </div>
