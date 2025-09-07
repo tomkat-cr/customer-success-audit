@@ -1,8 +1,8 @@
 // import { useState } from 'react'
 import './App.css'
-import CustomerSuccessAudit from './CustomerSuccessAudit/CustomerSuccessAudit'
-import Footer from './Footer/Footer'
-import Header from './Header/Header'
+import CustomerSuccessAudit from './components/CustomerSuccessAudit/CustomerSuccessAudit'
+import Footer from './components/Footer/Footer'
+import Header from './components/Header/Header'
 
 function App() {
 

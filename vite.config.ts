@@ -21,6 +21,7 @@ export default defineConfig(({ mode }) => {
     open: true,
     cors: true,
     strictPort: false,
+    allowedHosts: ['localhost', '127.0.0.1', 'customer_success_audit_lcl'],
   },
   preview: {
     port: 4173,
