@@ -1,5 +1,4 @@
 import { debug } from './utilities.tsx';
-// const debug = true;
 
 declare var apiBaseUrl: string; 
 declare var grecaptcha: any;
