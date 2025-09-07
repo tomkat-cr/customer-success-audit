@@ -10,6 +10,7 @@ const Footer = () => {
                             className="text-blue-600 underline hover:text-blue-800 font-bold"
                             href="https://omartobon.com"
                             target="_blank"
+                            rel="noopener noreferrer"
                         >
                           https://www.omartobon.com
                         </a> | Teléfono / WhatsApp: <a

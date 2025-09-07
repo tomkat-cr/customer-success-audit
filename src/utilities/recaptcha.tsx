@@ -2,7 +2,12 @@ import { debug } from './utilities.tsx';
 
 declare var apiBaseUrl: string; 
 declare var grecaptcha: any;
-declare var window: any;
+declare global {
+    interface Window {
+        onloadRecaptchaCallback: () => void;
+    }
+}
+declare var window: Window & typeof globalThis;
 
 export const loadRecaptcha = (siteKey: string) => {
     if (siteKey) {

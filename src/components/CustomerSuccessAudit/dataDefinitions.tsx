@@ -1,8 +1,14 @@
 // Define the types for the data we'll receive from the component
 export interface UserInfo {
     name: string;
+    email: string;
     company: string;
-    [key: string]: string;
+    role: string;
+    customers: string;
+    phone: string;
+    industry: string;
+    // The rest...
+    // [key: string]: string;
 }
 
 export interface Score {

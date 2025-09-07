@@ -23,6 +23,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a Ch
 - Added Calendly integration.
 - Added Google Analytics tracking.
 - Added backend email sending functionality.
+- Added reCAPTCHA support.
 - Added versioning.
 
 ### Changed

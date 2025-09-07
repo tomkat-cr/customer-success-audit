@@ -13,7 +13,7 @@ export const sendToEmail = (doc: any, userInfo: Record<string, any>) => {
   const email = userInfo.email;
   const company = userInfo.company;
   const subject = 'Reporte de Auditoría Customer Success de OTO Visual Flow';
-  const message = `Hola ${userInfo.name},<br><br>En el archivo adjunto encontrará el reporte de auditoría de Customer Success.<br><br>Saludos,<br>OTO Visual Flow`;
+  const message = `Hola ${userInfo.name},<br><br>En el archivo adjunto encontrará el reporte de auditoría de Customer Success.<br><br>Saludos cordiales,<br>OTO Visual Flow`;
   const attachment = doc.output('blob');
   const recaptchaResponse = grecaptcha.getResponse();
   if (debug) console.log('>> sendToEmail | recaptchaResponse:', recaptchaResponse);
@@ -36,29 +36,14 @@ export const sendToEmail = (doc: any, userInfo: Record<string, any>) => {
       method: 'POST',
       body: formData
     })
-      // .then(response => response.json())
+      .then(response => response.json())
       .then(data => {
-        if (data.ok) {
-          if (data.url) {
-            const urlParams = data.url.split('?')[1];
-            const urlParamsArray = urlParams.split('&');
-            const responseStatusRaw = urlParamsArray.find(param => param.startsWith('status='));
-            const responseStatus = responseStatusRaw ? decodeURIComponent(responseStatusRaw.split('=')[1]) : null;
-            if (debug) console.log('>> responseStatus:', responseStatus);
-            if (responseStatus && responseStatus.startsWith('Error')) {
-              if (debug) console.error('>> Error sending email:', data.statusText);
-              alert(responseStatus);
-            } else {
-              if (debug) console.log('>> Email send response:', data);
-              alert('¡Recursos enviados! Revisa tu email para acceder a contenido exclusivo.');
-            }
-          } else {
-            console.error('>> Error sending email:', data.statusText);
-            alert('Error enviando email. Por favor intenta de nuevo.');
-          }
+        if (debug) console.log('>> sendToEmail | data:', data);
+        if (data.result) {
+          alert('¡Recursos enviados! Revisa tu email para acceder a contenido exclusivo.');
         } else {
-          console.error('>> Error sending email:', data.statusText);
-          alert('Error enviando email. Por favor intenta de nuevo.');
+          console.error('>> Error sending email:', data.message);
+          alert(data.message);
         }
       })
       .catch(error => {

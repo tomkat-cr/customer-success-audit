@@ -4,7 +4,7 @@ import { trackEvent } from '../../utilities/google_tag.tsx';
 export const ExitIntentModal = ({showExitIntent, setShowExitIntent}: {showExitIntent: boolean, setShowExitIntent: (value: boolean) => void}) => (
     showExitIntent && (
       <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-2xl p-8 max-w-md w-full 1animate-bounce">
+        <div className="bg-white rounded-2xl p-8 max-w-md w-full">
           <div className="text-center">
             <AlertTriangle className="text-red-500 mx-auto mb-4" size={48} />
             <h3 className="text-xl font-bold mb-4">¡Espera! ¿Seguro que quieres irte?</h3>

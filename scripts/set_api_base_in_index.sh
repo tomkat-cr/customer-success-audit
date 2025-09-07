@@ -11,5 +11,5 @@ if [ -z "$API_BASE_URL" ]; then
 fi
 
 # Replace the API base URL in the index.html file
-perl -pi -e "s|const apiBaseUrl = \".*|const apiBaseUrl = \"${API_BASE_URL}\";|g" index.html
-perl -pi -e "s|const debug = .*|const debug = ${API_DEBUG};|g" index.html
+perl -pi -e "s|const apiBaseUrl = \".*\";|const apiBaseUrl = \"${API_BASE_URL}\";|g" index.html
+perl -pi -e "s|const debug = .*;|const debug = ${API_DEBUG:-0};|g" index.html
